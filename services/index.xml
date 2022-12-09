@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Our Services on Connecting Core</title>
+    <link>https://connectingcore.github.io/services/</link>
+    <description>Recent content in Our Services on Connecting Core</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 09 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://connectingcore.github.io/services/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Web3 Development</title>
+      <link>https://connectingcore.github.io/services/web3-development/</link>
+      <pubDate>Fri, 09 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://connectingcore.github.io/services/web3-development/</guid>
+      <description>Web3 is the future of the web Web3 is a new web development platform that allows developers to build decentralized applications.</description>
+    </item>
+    
+  </channel>
+</rss>
