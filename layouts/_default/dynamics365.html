@@ -1,0 +1,153 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+<!-- counter -->
+{{ if .Params.counter.enable }}
+{{ with .Params.counter }}
+
+{{ end }}
+{{ end }}
+<!-- /counter -->
+
+<!-- promo video -->
+{{ if .Params.video.enable }}
+{{ with .Params.video }}
+<section class="video-block section bg-light aboutus">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-12">
+        <div class="heading feature-list">
+          <img src="{{site.Params.profile | absURL }}" alt="test"/>
+          <h2 class="mb-4">{{ .title | markdownify }}</h2>
+          <div class="content">{{ .content | markdownify }}</div>
+          {{ if .button.enable }}
+          {{ with .button }}
+          <a href="{{ .link | absURL }}" class="btn btn-main mt-4">{{ .label }}<i class="ti-angle-right ml-2"></i></a>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+
+      <!-- <div class="col-lg-6">
+        <div class="video-img">
+          <img loading="lazy" src="{{ .video_thumb | absURL }}" alt="" class="img-fluid">
+          <a data-toggle="modal" data-src="{{ .video_embed_link }}" data-target="#videoModal" class="video-play"><i class="ti-control-play"></i></a>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+<!-- <div class="modal fade rounded" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered border-0" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-0 bg-transparent">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="" id="showVideo" allowscriptaccess="always"
+            allow="autoplay"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+{{ end }}
+{{ end }}
+<!-- /promo video -->
+
+<!-- team -->
+{{ if .Params.team.enable }}
+{{ with .Params.team }}
+<!-- <section class="section team">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="heading text-center mb-50">
+          <h2 class="mb-4">{{ .title | markdownify }}</h2>
+          <p>{{ .content | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      {{ range .team_member }}
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="team-block mb-5 mb-lg-0">
+          <img loading="lazy" src="{{ .image | absURL }}" alt="{{ .name }}" class="img-fluid w-100">
+          <h4 class="mt-4 mb-0">{{ .name }}</h4>
+          <p>{{.designation }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section> -->
+{{ end }}
+{{ end }}
+<!-- /team -->
+
+<!-- clients slider -->
+{{ if .Params.clients.enable }}
+{{ with .Params.clients }}
+<!-- <section class="section awards bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="why-content">
+          <h2 class="mb-4">{{ .title | markdownify }}</h2>
+          <p class="mb-5">{{ .content | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      {{ range .logos }}
+      <div class="col-lg-2 col-md-3 col-sm-4">
+        <div class="award-img-block mb-4 mb-lg-0">
+          <div class="award-img">
+            <img loading="lazy" src="{{ . | absURL }}" class="img-fluid">
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section> -->
+{{ end }}
+{{ end }}
+<!-- clients slider -->
+
+{{ if .Params.homepage.testimonial.enable }}
+{{ partial "testimonial.html" . }}
+
+{{ end }}
+<div class="newservices">
+    <div class="topservices">
+        <h2>Dynamics 365</h2>
+        <p>Welcome to our Dynamics 365 F&O (Finance and Operations) services page, where we provide businesses with a wide range of solutions to help them optimize their financial and operational processes. We specialize in delivering comprehensive solutions for Dynamics 365 F&O and its migration from Dynamics Ax to Dynamics 365, helping businesses achieve a seamless transition while realizing the benefits of this powerful platform.
+        </p>
+    </div>
+    <div class="services_wraps">
+        <div class="service">
+            <img src="{{ site.Params.dynamic | absURL }}" alt="consultancy image"/>
+            <span>
+                <h3>Our Dynamics 365 F&O solutions are designed to help businesses:</h3>
+        </span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>Improve financial performance:</strong>Dynamics 365 F&O provides businesses with a comprehensive set of tools to manage financial operations, including accounting, financial reporting, and budgeting. Our solutions are designed to help businesses streamline these processes, enabling them to improve financial performance and make better-informed decisions.</li>
+                <li><strong>Increase operational efficiency:</strong>Dynamics 365 F&O provides businesses with a suite of tools to manage their operations, including procurement, inventory management, and production. Our solutions help businesses optimize these processes, reducing costs and improving efficiency.</li>
+                <li><strong>Enhance customer engagement: </strong>Dynamics 365 F&O provides businesses with a complete view of their customers, enabling them to deliver personalized experiences and improve customer satisfaction. Our solutions help businesses leverage this capability, enabling them to engage with customers more effectively and build stronger relationships.</li>
+                <li><strong>Accelerate digital transformation:</strong>Dynamics 365 F&O is a powerful platform that enables businesses to embrace digital transformation and modernize their operations. Our solutions are designed to help businesses leverage this platform, enabling them to stay ahead of the competition and drive growth.</li>
+                <p>In addition to providing Dynamics 365 F&O solutions, we also specialize in migrating businesses from Dynamics Ax to Dynamics 365. Our migration services are designed to help businesses move from legacy systems to a modern, cloud-based platform with minimal disruption to their operations. We work closely with our clients to ensure a seamless transition, while also providing support and training to help them realize the full potential of Dynamics 365 F&O.</p>
+                <p>Our team of experts has extensive experience in delivering Dynamics 365 F&O solutions, and we are committed to helping businesses achieve their goals. Contact us today to learn more about our services and how we can help your business optimize its financial and operational processes.</p>
+            </ul>
+        </div>
+       
+      
+    </div>
+</div>
+{{ end }}

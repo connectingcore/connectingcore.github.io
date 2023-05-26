@@ -1,0 +1,156 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+<!-- counter -->
+{{ if .Params.counter.enable }}
+{{ with .Params.counter }}
+
+{{ end }}
+{{ end }}
+<!-- /counter -->
+
+<!-- promo video -->
+{{ if .Params.video.enable }}
+{{ with .Params.video }}
+<section class="video-block section bg-light aboutus">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-12">
+        <div class="heading feature-list">
+          <img src="{{site.Params.profile | absURL }}" alt="test"/>
+          <h2 class="mb-4">{{ .title | markdownify }}</h2>
+          <div class="content">{{ .content | markdownify }}</div>
+          {{ if .button.enable }}
+          {{ with .button }}
+          <a href="{{ .link | absURL }}" class="btn btn-main mt-4">{{ .label }}<i class="ti-angle-right ml-2"></i></a>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+
+      <!-- <div class="col-lg-6">
+        <div class="video-img">
+          <img loading="lazy" src="{{ .video_thumb | absURL }}" alt="" class="img-fluid">
+          <a data-toggle="modal" data-src="{{ .video_embed_link }}" data-target="#videoModal" class="video-play"><i class="ti-control-play"></i></a>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+<!-- <div class="modal fade rounded" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered border-0" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-0 bg-transparent">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="" id="showVideo" allowscriptaccess="always"
+            allow="autoplay"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+{{ end }}
+{{ end }}
+<!-- /promo video -->
+
+<!-- team -->
+{{ if .Params.team.enable }}
+{{ with .Params.team }}
+<!-- <section class="section team">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="heading text-center mb-50">
+          <h2 class="mb-4">{{ .title | markdownify }}</h2>
+          <p>{{ .content | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      {{ range .team_member }}
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="team-block mb-5 mb-lg-0">
+          <img loading="lazy" src="{{ .image | absURL }}" alt="{{ .name }}" class="img-fluid w-100">
+          <h4 class="mt-4 mb-0">{{ .name }}</h4>
+          <p>{{.designation }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section> -->
+{{ end }}
+{{ end }}
+<!-- /team -->
+
+<!-- clients slider -->
+{{ if .Params.clients.enable }}
+{{ with .Params.clients }}
+<!-- <section class="section awards bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="why-content">
+          <h2 class="mb-4">{{ .title | markdownify }}</h2>
+          <p class="mb-5">{{ .content | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      {{ range .logos }}
+      <div class="col-lg-2 col-md-3 col-sm-4">
+        <div class="award-img-block mb-4 mb-lg-0">
+          <div class="award-img">
+            <img loading="lazy" src="{{ . | absURL }}" class="img-fluid">
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section> -->
+{{ end }}
+{{ end }}
+<!-- clients slider -->
+
+{{ if .Params.homepage.testimonial.enable }}
+{{ partial "testimonial.html" . }}
+
+{{ end }}
+<div class="newservices">
+    <div class="topservices">
+        <h2>Power Platform</h2>
+        <p>Welcome to our Power Platform solutions page, where we offer a powerful suite of tools to help businesses automate processes, build custom applications, and drive productivity. Our Power Platform solutions provide numerous benefits compared to custom development, making it a popular choice for businesses looking to streamline their operations and reduce costs.</p>
+    </div>
+    <div class="services_wraps">
+        <div class="service">
+            <img src="{{ site.Params.powerplatform | absURL }}" alt="consultancy image"/>
+            <span>
+                <h3>Here are some of the benefits of using Power Platform solutions over custom development:</h3>
+           
+        </span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>Rapid development :</strong>Power Platform solutions enable businesses to build custom applications and automate processes quickly and easily, without the need for extensive coding knowledge. This means that businesses can get their solutions up and running faster than they would with traditional custom development.
+                </li>
+                <li><strong>Lower cost: </strong>Power Platform solutions are typically less expensive than custom development. This is because they leverage pre-built templates, components, and connectors, reducing the amount of custom coding required. This can result in significant cost savings for businesses, while still delivering robust and effective solutions.</li>
+                <li><strong>Enhanced agility: </strong>Power Platform solutions provide businesses with the flexibility to adapt quickly to changing business needs. They can be easily modified and updated to meet new requirements, making it easy for businesses to stay ahead of the competition.</li>
+                <li><strong>Improved productivity : </strong>Power Platform solutions can help businesses automate routine tasks, freeing up time for employees to focus on more value-added activities. This can lead to improved productivity and increased efficiency across the organization.</li>
+                <li><strong>Seamless integration: </strong>Power Platform solutions integrate seamlessly with other Microsoft tools like SharePoint, Dynamics 365, and Microsoft Teams, providing businesses with a complete suite of tools to manage their operations.
+                </li>
+                <p>Our consultancy offers a wide range of Power Platform solutions to help businesses drive productivity, automate processes, and achieve their goals. We work closely with our clients to understand their unique needs and challenges, and we leverage our expertise to deliver solutions that meet their specific requirements. With our Power Platform solutions, businesses can enjoy the benefits of faster development, lower cost, increased agility, improved productivity, and seamless integration with other Microsoft tools.</p>
+                <p>Contact us today to learn more about our Power Platform solutions and how we can help your business streamline its operations and achieve its goals.</p>
+            </ul>
+        </div>
+       
+      
+    </div>
+</div>
+{{ end }}

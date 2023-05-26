@@ -1,0 +1,154 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+<!-- counter -->
+{{ if .Params.counter.enable }}
+{{ with .Params.counter }}
+
+{{ end }}
+{{ end }}
+<!-- /counter -->
+
+<!-- promo video -->
+{{ if .Params.video.enable }}
+{{ with .Params.video }}
+<section class="video-block section bg-light aboutus">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-12">
+        <div class="heading feature-list">
+          <img src="{{site.Params.profile | absURL }}" alt="test"/>
+          <h2 class="mb-4">{{ .title | markdownify }}</h2>
+          <div class="content">{{ .content | markdownify }}</div>
+          {{ if .button.enable }}
+          {{ with .button }}
+          <a href="{{ .link | absURL }}" class="btn btn-main mt-4">{{ .label }}<i class="ti-angle-right ml-2"></i></a>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+
+      <!-- <div class="col-lg-6">
+        <div class="video-img">
+          <img loading="lazy" src="{{ .video_thumb | absURL }}" alt="" class="img-fluid">
+          <a data-toggle="modal" data-src="{{ .video_embed_link }}" data-target="#videoModal" class="video-play"><i class="ti-control-play"></i></a>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+<!-- <div class="modal fade rounded" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered border-0" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-0 bg-transparent">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="" id="showVideo" allowscriptaccess="always"
+            allow="autoplay"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+{{ end }}
+{{ end }}
+<!-- /promo video -->
+
+<!-- team -->
+{{ if .Params.team.enable }}
+{{ with .Params.team }}
+<!-- <section class="section team">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="heading text-center mb-50">
+          <h2 class="mb-4">{{ .title | markdownify }}</h2>
+          <p>{{ .content | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      {{ range .team_member }}
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="team-block mb-5 mb-lg-0">
+          <img loading="lazy" src="{{ .image | absURL }}" alt="{{ .name }}" class="img-fluid w-100">
+          <h4 class="mt-4 mb-0">{{ .name }}</h4>
+          <p>{{.designation }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section> -->
+{{ end }}
+{{ end }}
+<!-- /team -->
+
+<!-- clients slider -->
+{{ if .Params.clients.enable }}
+{{ with .Params.clients }}
+<!-- <section class="section awards bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="why-content">
+          <h2 class="mb-4">{{ .title | markdownify }}</h2>
+          <p class="mb-5">{{ .content | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      {{ range .logos }}
+      <div class="col-lg-2 col-md-3 col-sm-4">
+        <div class="award-img-block mb-4 mb-lg-0">
+          <div class="award-img">
+            <img loading="lazy" src="{{ . | absURL }}" class="img-fluid">
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section> -->
+{{ end }}
+{{ end }}
+<!-- clients slider -->
+
+{{ if .Params.homepage.testimonial.enable }}
+{{ partial "testimonial.html" . }}
+
+{{ end }}
+<div class="newservices">
+    <div class="topservices">
+        <h2>Remote Staffing</h2>
+        <p>Welcome to our Remote Staffing service, where we provide businesses with the opportunity to hire skilled professionals from all over the world to work remotely. Our Remote Staffing service offers numerous benefits that can help businesses grow, reduce costs, and increase efficiency.
+        </p>
+    </div>
+    <div class="services_wraps">
+        <div class="service">
+            <img src="{{ site.Params.remotestaffing | absURL }}" alt="consultancy image"/>
+            <span>
+                <h3>Here are some of the benefits of our Remote Staffing service:</h3>
+        </span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>Access to a global talent pool:</strong>With our Remote Staffing service, businesses can tap into a vast pool of talented professionals from around the world. This enables them to find the best talent for their needs, regardless of geographic location.</li>
+                <li><strong>Reduced costs:</strong>Our Remote Staffing service can help businesses reduce their labor costs by eliminating the need for expensive office space, equipment, and other overhead expenses associated with on-site staffing. With our service, businesses can hire talented professionals at a lower cost than they would in their local area.</li>
+                <li><strong>Increased efficiency:</strong>Remote staffing can help businesses increase their efficiency by providing access to a larger pool of professionals with specialized skills. This can help organizations complete projects more quickly and with higher quality results.</li>
+                <li><strong>Flexibility:</strong>Our Remote Staffing service provides businesses with the flexibility to quickly scale up or down their staffing needs as their business demands change. This can help businesses adapt to changing market conditions, product cycles, and other factors that impact their workforce needs.</li>
+                <li><strong>Enhanced productivity:</strong>Remote staff are often more productive due to fewer interruptions, more flexible schedules, and the ability to work from the comfort of their own home. This can lead to better quality work and faster completion of projects.</li>
+                <p>Our Remote Staffing service is designed to help businesses find and hire top talent from around the world with ease. We take care of the entire hiring process, from screening candidates to handling payroll and benefits. We also provide support and supervision to ensure that our clients receive the highest quality work and performance from our remote staff.</p>
+                <p>Contact us today to learn more about our Remote Staffing service and how we can help your business grow and succeed.</p>
+            </ul>
+        </div>
+       
+      
+    </div>
+</div>
+{{ end }}

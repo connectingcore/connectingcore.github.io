@@ -1,0 +1,162 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+<!-- counter -->
+{{ if .Params.counter.enable }}
+{{ with .Params.counter }}
+
+{{ end }}
+{{ end }}
+<!-- /counter -->
+
+<!-- promo video -->
+{{ if .Params.video.enable }}
+{{ with .Params.video }}
+<section class="video-block section bg-light aboutus">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-12">
+        <div class="heading feature-list">
+          <img src="{{site.Params.profile | absURL }}" alt="test"/>
+          <h2 class="mb-4">{{ .title | markdownify }}</h2>
+          <div class="content">{{ .content | markdownify }}</div>
+          {{ if .button.enable }}
+          {{ with .button }}
+          <a href="{{ .link | absURL }}" class="btn btn-main mt-4">{{ .label }}<i class="ti-angle-right ml-2"></i></a>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+
+      <!-- <div class="col-lg-6">
+        <div class="video-img">
+          <img loading="lazy" src="{{ .video_thumb | absURL }}" alt="" class="img-fluid">
+          <a data-toggle="modal" data-src="{{ .video_embed_link }}" data-target="#videoModal" class="video-play"><i class="ti-control-play"></i></a>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+<!-- <div class="modal fade rounded" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered border-0" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-0 bg-transparent">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="" id="showVideo" allowscriptaccess="always"
+            allow="autoplay"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+{{ end }}
+{{ end }}
+<!-- /promo video -->
+
+<!-- team -->
+{{ if .Params.team.enable }}
+{{ with .Params.team }}
+<!-- <section class="section team">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="heading text-center mb-50">
+          <h2 class="mb-4">{{ .title | markdownify }}</h2>
+          <p>{{ .content | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      {{ range .team_member }}
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="team-block mb-5 mb-lg-0">
+          <img loading="lazy" src="{{ .image | absURL }}" alt="{{ .name }}" class="img-fluid w-100">
+          <h4 class="mt-4 mb-0">{{ .name }}</h4>
+          <p>{{.designation }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section> -->
+{{ end }}
+{{ end }}
+<!-- /team -->
+
+<!-- clients slider -->
+{{ if .Params.clients.enable }}
+{{ with .Params.clients }}
+<!-- <section class="section awards bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="why-content">
+          <h2 class="mb-4">{{ .title | markdownify }}</h2>
+          <p class="mb-5">{{ .content | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      {{ range .logos }}
+      <div class="col-lg-2 col-md-3 col-sm-4">
+        <div class="award-img-block mb-4 mb-lg-0">
+          <div class="award-img">
+            <img loading="lazy" src="{{ . | absURL }}" class="img-fluid">
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section> -->
+{{ end }}
+{{ end }}
+<!-- clients slider -->
+
+{{ if .Params.homepage.testimonial.enable }}
+{{ partial "testimonial.html" . }}
+
+{{ end }}
+<div class="newservices">
+    <div class="topservices">
+        <h2>Sharepoint</h2>
+        <p>SharePoint migration is the process of moving your organization's data, documents, and other important information from an older version of SharePoint to a newer version or from a different platform to SharePoint. It can be a complex and time-consuming process, but it is essential for keeping your organization's data organized, up-to-date, and easily accessible.</p>
+    </div>
+    <div class="services_wraps">
+        <div class="service">
+            <img src="{{ site.Params.sharepoint | absURL }}" alt="consultancy image"/>
+            <span>
+                <h3>The benefits of migrating to SharePoint include:</h3>
+           
+        </span>
+        </div>
+        <div class="points">
+            <ul>
+                <li><strong>Enhanced security and compliance:</strong>SharePoint provides a secure platform to store and manage sensitive information while also ensuring compliance with regulatory requirements.
+                </li>
+                <li><strong>Improved collaboration: </strong>SharePoint's document management and collaboration tools allow teams to work together more efficiently and effectively.
+                </li>
+                <li><strong>Cost savings: </strong>SharePoint can help reduce costs associated with managing multiple systems, licensing, and maintenance. At our consultancy, we offer SharePoint migration services to help organizations move their data and content to SharePoint with minimal disruption to their business operations. Our team of experienced consultants can help you plan and execute your migration, including pre-migration assessments, content mapping, and post-migration testing and validation.</li>
+
+                <li><strong>SharePoint for Collaboration: </strong>SharePoint is an ideal platform for collaboration, providing tools and features that make it easy for teams to share documents, ideas, and expertise. SharePoint enables seamless collaboration, providing access to documents from anywhere, on any device, and at any time.</li>
+                <h3>Some of the key features of SharePoint for collaboration include:</h3>
+                <li><strong>Document management: </strong>SharePoint allows teams to easily store, organize, and share documents, ensuring that the latest version is always available.
+                </li>
+                <li><strong>Workflows: </strong>SharePoint workflows allow teams to automate routine tasks and streamline collaboration, enabling better communication and quicker decision-making.
+                </li>
+                <li><strong>Team sites: </strong>SharePoint team sites provide a central location for teams to access the information they need, including project plans, calendars, and discussions.
+                </li>
+                <p>Our consultancy provides SharePoint for collaboration services, helping organizations implement SharePoint to support their collaboration efforts. We can help you design and customize your SharePoint environment to fit your specific needs, including creating team sites, configuring workflows, and integrating other Microsoft tools like Microsoft Teams, PowerApps, and Power BI. With our expertise in SharePoint collaboration, we can help your organization improve productivity and enhance communication between team members.</p>
+            </ul>
+        </div>
+       
+      
+    </div>
+</div>
+{{ end }}

@@ -1,0 +1,217 @@
+######################## default configuration ####################
+baseurl = "https://connectingcore.github.io/"
+languageCode = "en-us"
+title = "Connecting Core"
+theme = "orbitor-hugo"
+themesDir = "themes"
+summaryLength = "10"
+paginate = 4
+# google analytics
+googleAnalytics = "" # example : UA-123-45
+# disqus short name
+disqusShortname = "themefisher-template" # get your shortname form here : https://disqus.com
+
+[outputs]
+home = ["HTML", "JSON"]
+
+############################# Plugins ##############################
+# CSS Plugins
+[[params.plugins.css]]
+link = "plugins/bootstrap/css/bootstrap.min.css"
+[[params.plugins.css]]
+link = "plugins/themify/css/themify-icons.css"
+[[params.plugins.css]]
+link = "plugins/slick/slick.min.css"
+[[params.plugins.css]]
+link = "https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Rubik&display=swap"
+
+# JS Plugins
+[[params.plugins.js]]
+link = "plugins/jQuery/jquery.min.js"
+[[params.plugins.js]]
+link = "plugins/bootstrap/js/bootstrap.min.js"
+[[params.plugins.js]]
+link = "plugins/slick/slick.min.js"
+[[params.plugins.js]]
+link = "plugins/search/fuse.min.js"
+[[params.plugins.js]]
+link = "plugins/search/mark.js"
+[[params.plugins.js]]
+link = "plugins/search/search.js"
+[[params.plugins.js]]
+link = "plugins/google-map/map.js"
+
+  
+############################## navigation ###############################
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "About"
+url = "about"
+weight = 2
+
+
+[[menu.main]]
+weight = 5
+name = "Services"
+hasChildren = true
+
+  [[menu.main]]
+  parent = "Services"
+  name = "Consultancy"
+  url = "consultancy"
+
+  [[menu.main]]
+  parent = "Services"
+  name = "Remote Staffing"
+  url = "remotestaffing"
+
+  [[menu.main]]
+weight = 6
+name = "IT Products"
+hasChildren = true
+
+  [[menu.main]]
+  parent = "IT Products"
+  name = "SharePoint"
+  url = "sharepoint"
+
+ [[menu.main]]
+  parent = "IT Products"
+  name = "Dynamics 365"
+  url = "dynamics365"
+
+
+  [[menu.main]]
+  parent = "IT Products"
+  name = "Power Platform"
+  url = "powerplatform"
+
+[[menu.main]]
+name = "Contact"
+url = "contact"
+weight = 7
+
+# footer menu 1
+[[menu.company]]
+name = "About"
+url = "about"
+weight = 2
+
+[[menu.company]]
+name = "Services"
+url = "services"
+weight = 3
+
+[[menu.company]]
+name = "IT Products"
+url = "products"
+weight = 4
+
+[[menu.company]]
+name = "Contact"
+url = "contact"
+weight = 5
+
+
+
+# footer menu 2
+[[menu.support]]
+name = "SharePoint Migration"
+url = "sharePointmigration"
+weight = 1
+
+[[menu.support]]
+name = "PowerApps"
+url = "powerApps"
+weight = 2
+
+[[menu.support]]
+name = "Power Platform"
+url = "powerplatform"
+weight = 3
+
+[[menu.support]]
+name = "Dynamics 365"
+url = "dynamics"
+weight = 4
+
+[[menu.support]]
+name = "Remote Statffing"
+url = "remotestatffing"
+weight = 5
+
+[[menu.support]]
+name = "Cloud Migration"
+url = "cloudmigration"
+weight = 6
+
+#################### default parameters ################################
+[params]
+logo = "images/logomain.png"
+tw = "images/twitter.png"
+linkedin = "images/linkedin.png"
+gplus = "images/gplus.png"
+banner = "images/cc_bannerone.svg"
+fb = "images/fb.png"
+locationicon = "images/address.png"
+innovation = "images/innovation.svg"
+transperant = "images/transperant.svg"
+approach = "images/approach.svg"
+messageicon = "images/email.png"
+phoneicon = "images/phone.png"
+profile = "images/aboutprofile.png"
+loc = "images/location.png"
+dots = "images/dots.png"
+consultancy = "images/consultancymain.png"
+powerplatform = "images/powerplatform.png"
+remotestaffing = "images/remotestaffing.png"
+sharepoint = "images/sharepoint.png"
+dynamic = "images/dynamic.jpg"
+newbanner = "images/newbanner.png"
+logo_white = "images/logo-white.png"
+contactimg = "images/contact-message1.png"
+# Meta data
+description = "This is meta description"
+author = "Themefisher"
+# contact info
+mobile = "+44 7732 92 6999"
+email = "admin@connectingcore.co.uk"
+location = "North Main Street,Brooklyn Australia"
+footer_content = "Welcome to ConnectingCore consultancy services, where we offer expert solutions for businesses seeking to maximize their productivity and efficiency through SharePoint, Power Platform, and Dynamics 365..."
+# copyright
+copyright = "Copyrights ConnectingCore - 2023"
+
+# Preloader
+[params.preloader]
+enable = false
+preloader = "" # use jpg, png, svg or gif format.
+
+# Navigation button
+[params.navigation_button]
+enable = true
+label = "Get an estimate"
+link = "contact"
+
+# cookies
+[params.cookies]
+enable = false
+expire_days = 2
+
+################################# Social icon #######################
+[[params.social]]
+icon = "ti-facebook"
+link = "#"
+
+[[params.social]]
+icon = "ti-twitter-alt"
+link = "#"
+
+[[params.social]]
+icon = "ti-github"
+link = "https://github.com/connectingcore"
+
+################################# images and icons #######################

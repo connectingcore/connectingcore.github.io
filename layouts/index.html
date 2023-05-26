@@ -1,0 +1,188 @@
+{{ define "main" }}
+
+<!-- Slider -->
+{{ if site.Data.homepage.banner.enable }}
+{{ with site.Data.homepage.banner }}
+<!-- <section class="banner d-flex align-items-center fade-in-down">
+  <div class="container">
+    <div class="row">
+      <img class="mainbanner" src="{{site.Params.newbanner}}" alt="test"/>
+    </div>
+  </div>
+</section> -->
+<img class="mainbanner" src="{{site.Params.newbanner}}" alt="test"/>
+
+{{ end }}
+{{ end }}
+<!-- /Slider -->
+<!-- feature -->
+{{ if site.Data.homepage.feature.enable }}
+{{ with site.Data.homepage.feature }}
+<section class="section process">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- <div class="col-lg-5">
+        <div class="process-block pl-4">
+          <span class="text-uppercase text-sm letter-spacing">{{ .subtitle | markdownify }}</span>
+          <h2 class="mb-4 mt-3">{{ .title | markdownify }}</h2>
+          <p class="mb-4">{{ .content | markdownify }}</p>
+        </div>
+      </div> -->
+      <div class="col-lg-12 col-xs-12 col-md-12 all_services">
+        <h3>Our Services</h3>
+        <p>Our comprehensive range of professional services including seamless cloud migration, expert blockchain consulting, harnessing the power of artificial intelligence, remote staffing solutions, and tailored enterprise solution planning. These services enable businesses to optimize their operations, drive innovation, access specialized talent, and leverage advanced technologies for sustainable growth in today's digital landscape.</p>
+        <div class="row" style="justify-content: center;">
+          {{ range .feature_item }}
+          <div class="col-sm-6 mb-4 col-lg-4">
+            <div class="icon-block text-center">
+              <span class="lineone"></span>
+              <span class="linetwo"></span>
+              <img loading="lazy" src="{{ .image }}" alt="{{ .name }}" class="img-fluid">
+              <h5>{{ .title | markdownify }}</h5>
+              <p>{{ .content | markdownify }}</p>
+              <span class="linebottom"></span>
+            </div>
+           
+          </div>
+          {{ end }}
+          <!-- <a href="">Read More</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+<!-- /feature -->
+<!-- banner feature -->
+{{ if site.Data.homepage.banner_feature.enable }}
+{{ with site.Data.homepage.banner_feature }}
+<section class="section about services_wrap fade-in-down">
+  <img src="{{site.Params.dots}}" alt="test" class="dotsone"/>
+  <div class="container">
+    <div class="services-heading">
+      <h2>Why to choose us ??</h2>
+      <p>Connecting Core is deeply committed to the success of our clients, going above and beyond to personalize their experiences and create meaningful impacts. We take pride in our ability to anticipate and address issues even before our clients are aware of them. By adopting a progressive approach to technology and marketing, we ensure that we are at the forefront of industry trends and best practices.<a href="/whyus">Read more</a></p>
+  </div>
+    <div class="row">
+      {{ range .feature_item }}
+      <div class="col-lg-4 col-md-6">
+        <div class="about-item mb-5 mb-lg-5">
+          <!-- <div class="icon">
+            <i class="{{ .icon }}"></i>
+            <img src="../../Desktop/Gen/dots.png" class="dotsone"/>
+          </div> -->
+
+          <div class="services fade-in-down">
+          <div class="content one">
+            <img loading="lazy" src="{{ .image }}" alt="{{ .name }}" class="img-fluid">
+            <h4 class="mt-3 mb-3">{{ .title | markdownify }}</h4>
+            <p class="mb-4">{{ .content | markdownify }}</p>
+            <!-- <a href="#">Read More</a> -->
+          </div>
+          </div>
+        </div>
+        
+      </div>
+      {{ end }}
+    </div>
+    <img src="{{site.Params.dots}}" alt="test" class="dotstwo"/>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+<!-- /banner feature -->
+
+
+
+<!-- call to action -->
+{{ if site.Data.homepage.call_to_action.enable }}
+{{ with site.Data.homepage.call_to_action }}
+<!-- <section class="section cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5">
+        <div class="cta-content bg-white p-5 rounded">
+          <h3 class="mb-4">{{ .title | markdownify }}</h3>
+          <p class="mb-30">{{ .content | markdownify }}</p>
+          {{ if .button.enable }}
+          {{ with .button }}
+          <a href="{{ .link | absURL }}" class="btn btn-main">{{ .label }}<i class="ti-angle-right ml-2"></i></a>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+{{ end }}
+{{ end }}
+<!-- /call to action -->
+
+<!-- section portfolio start -->
+{{ if site.Data.homepage.project.enable }}
+<!-- <section class="section portfolio pb-0">
+  {{ with site.Data.homepage.project }}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="heading">
+          <h2 class="mb-4">{{ .title | markdownify }}</h2>
+          <p>{{ .content | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+  <div class="container-fluid">
+    <div class="row portfolio-gallery">
+      {{ range (where site.RegularPages "Section" "portfolio" )}}
+      <div class="col-lg-4 col-md-6">
+        <div class="portflio-item position-relative mb-4">
+          <a href="{{.Permalink}}">
+            {{ $img_original := resources.Get .Params.image }}
+            {{ $img := $img_original.Fill "300x400" }}
+            <img loading="lazy" src="{{ $img.RelPermalink }}" alt="{{ .Title }}" class="img-fluid w-100">
+            <div class="overlay-item"><i class="ti-link"></i></div>
+            <div class="portfolio-item-content">
+              <h3 class="mb-0 text-white">{{ .Title | markdownify }}</h3>
+              <p class="text-white-50">{{ .Params.Category }}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section> -->
+{{ end }}
+<!-- section portfolio END -->
+
+<!-- section Counter Start -->
+{{ if site.Data.homepage.counter.enable }}
+{{ with site.Data.homepage.counter }}
+<!-- <section class="section counter">
+  <div class="container">
+    <div class="row">
+      {{ range .counter_item }}
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="counter-item text-center mb-5 mb-lg-0">
+          <h2 class="mb-0"><span class="counter-stat count font-weight-bold" data-count="{{ .count }}">0</span> +</h2>
+          <p>{{ .title | markdownify }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section> -->
+{{ end }}
+{{ end }}
+<!-- section Counter End  -->
+
+<!-- testimonial -->
+{{ if site.Data.homepage.testimonial.enable }}
+{{ partial "testimonial.html" . }}
+{{ end }}
+<!-- /testimonial -->
+
+{{ end }}
